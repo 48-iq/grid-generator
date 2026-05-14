@@ -50,9 +50,11 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          secret-files: |
+            maven_settings=.github/maven-settings.xml
+
           secrets: |
-            "maven_settings=.github/maven-settings.xml"
-            "github_token=${{ secrets.GITHUB_TOKEN }}"
+            github_token=${{ secrets.GITHUB_TOKEN }}
       
       - name: Generate artifact attestation
         uses: actions/attest@v4
