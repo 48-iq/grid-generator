@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: generator
+  grpc:
+    server:
+      port: 9090
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_URL:localhost:5432/generatordb}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+app:
+  separator:
+    host: ${SEPARATOR_HOST:separator}
+    port: ${SEPARATOR_PORT:8080}
